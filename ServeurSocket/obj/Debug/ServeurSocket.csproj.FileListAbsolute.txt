@@ -1,0 +1,7 @@
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\bin\Debug\ServeurSocket.exe.config
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\bin\Debug\ServeurSocket.exe
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\bin\Debug\ServeurSocket.pdb
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\obj\Debug\ServeurSocket.csprojResolveAssemblyReference.cache
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\obj\Debug\ServeurSocket.csproj.CoreCompileInputs.cache
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\obj\Debug\ServeurSocket.exe
+C:\Users\guill\source\repos\SocketCours\ServeurSocket\obj\Debug\ServeurSocket.pdb

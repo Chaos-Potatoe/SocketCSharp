@@ -12,7 +12,7 @@ namespace ServeurSocket
     class Program
     {
         private static Socket _listenerSocket;
-        private static Socket socketReception;
+       // private static Socket socketReception;
         private static byte[] buffer;
         private static int readBytes;
 
@@ -42,13 +42,31 @@ namespace ServeurSocket
             {
                 _listenerSocket.Listen(0);
                 //Clients.Add(new ClientManager(  ));
-                socketReception = _listenerSocket.Accept();
-                buffer = new byte[socketReception.SendBufferSize];
-                readBytes = socketReception.Receive(buffer);
+                var socketReception = _listenerSocket.Accept();
+                var clientThread = new Thread(() =>
+                {
+                    Client(socketReception);
+                });
+                clientThread.Start();
+
+
+            }
+        }
+
+        private static void Client(Socket socketRecep)
+        {
+            while (true)
+            {
+
+                buffer = new byte[socketRecep.SendBufferSize];
+                readBytes = socketRecep.Receive(buffer);
                 if (readBytes > 0)
                 {
                     var msg = Encoding.UTF8.GetString(buffer, 0, readBytes);
                     Console.WriteLine(msg);
+
+                    
+                    socketRecep.Send(Encoding.UTF8.GetBytes("recu"));
                 }
             }
         }

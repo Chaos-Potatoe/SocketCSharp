@@ -43,6 +43,14 @@ namespace ClientSocket
             {
                 input = Console.ReadLine();
                 _socket.Send(Encoding.UTF8.GetBytes(input));
+
+                var buffer = new byte[_socket.SendBufferSize];
+                var readBytes = _socket.Receive(buffer);
+                if (readBytes > 0)
+                {
+                    var msg = Encoding.UTF8.GetString(buffer, 0, readBytes);
+                    Console.WriteLine(msg);
+                }
             }
         }
     }
